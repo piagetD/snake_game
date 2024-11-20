@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <div id="map" class="map">
+        <div id="snake" class="block"></div>
+    </div>
+    <div onclick="moveAction()">BUTTON</div>
+</body>
+
+<style>
+    .map{
+        width: 400px;
+        height: 400px;
+        background-color: aliceblue;
+        border: 1px solid;
+        position: relative;
+    }
+    .block {
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        position: absolute;
+        transition: top 1s, left 1s;
+        top: 0;
+        left: 0px;
+    }
+</style>
+</html>
