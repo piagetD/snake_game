@@ -9,9 +9,11 @@
   </head>
   <body>
     <h1>html5贪吃蛇小游戏</h1>
-
-    <h3 id="score">我的得分:0</h3>
-    <h3 id="speed">当前速度:1</h3>
+    <div id="score">我的得分:0</div>
+    <div id="speed">当前速度:1</div>
+    <div class="map">
+      <div id="snake" class="snakeBody"></div>
+    </div>
   </body>
   
   <style>
@@ -19,8 +21,22 @@
       text-align: center;
       background-color: rgb(255, 255, 255);
     }
-    #snake {
-      margin-top: 20px;
+    .map {
+      width: 600px;
+      height: 600px;
+      margin: auto;
+      background-color: aliceblue;
+      border: 1px solid black;
+    }
+    .snakeBody {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background-color: black;
     }
   </style>
+
+  <script>
+    init()
+  </script>
 </html>
