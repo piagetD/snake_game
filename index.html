@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>贪吃蛇小游戏</title>
-    <script type="text/javascript" src="entity.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
     <script type="text/javascript" src="main.js"></script>
-  </head>
-  <body>
-    <h1>html5贪吃蛇小游戏</h1>
-    <div id="score">我的得分:0</div>
-    <div id="speed">当前速度:1</div>
-    <div class="map">
-      <div id="snake" class="snakeBody"></div>
+</head>
+<body>
+    <div id="map" class="map">
+        <div id="snake" class="block"></div>
     </div>
-  </body>
-  
-  <style>
-    body {
-      text-align: center;
-      background-color: rgb(255, 255, 255);
-    }
-    .map {
-      width: 600px;
-      height: 600px;
-      margin: auto;
-      background-color: aliceblue;
-      border: 1px solid black;
-    }
-    .snakeBody {
-      width: 20px;
-      height: 20px;
-      position: absolute;
-      background-color: black;
-    }
-  </style>
+    <div onclick="moveAction()">BUTTON</div>
+</body>
 
-  <script>
-    init()
-  </script>
+<style>
+    .map{
+        width: 400px;
+        height: 400px;
+        background-color: aliceblue;
+        border: 1px solid;
+        position: relative;
+    }
+    .block {
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        position: absolute;
+        transition: top 1s, left 1s;
+        top: 0;
+        left: 0px;
+    }
+</style>
 </html>
