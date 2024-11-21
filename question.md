@@ -2,7 +2,8 @@
 ### 如何让HTML网页中的js文件立即执行
   写在script标签中，直接调用js文件中的方法，只要引入后，所有js文件都在一个作用域下
 ### 如何让贪吃蛇动起来
-* 利用position: absolute来控制蛇的位置，后续考虑添加transition动画，absolute父级应该设置position: relative;
+* 利用position: absolute来控制蛇的位置，absolute父级应该设置position: relative;
+* 不要添加transition动画，否则在转弯时会错位
 ### 如何动态在HTML中添加元素
 1. 直接操作dom元素，让网页重新渲染（当然会损耗性能）
 2. 生成dom元素，再动态添加进已有元素中
