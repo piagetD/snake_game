@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test dom</title>
+</head>
+
+<body>
+    <div id="map" class="map">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
+</body>
+
+<style>
+    .map {
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+
+    .block {
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+    }
+</style>
+
+<script>
+    const element = document.getElementById("map");
+    console.log("element S: ", element.childNodes, element.children);
+    while (element.firstChild) {
+        console.log("while: ", element.firstChild);
+        element.removeChild(element.firstChild);
+    }
+    console.log("element E: ", element.childNodes, element.children);
+</script>
+
+</html>

@@ -79,7 +79,7 @@ function checkIsEnd() {
 }
 
 function addBody(x, y) {
-    console.log("addBody in: ", snakeList, x, y);
+    console.log("addBody in: ", snakeList.join(), x, y);
     L++;
     snakeList.push([x, y]);
     let body = document.createElement("div");
@@ -88,7 +88,7 @@ function addBody(x, y) {
     body.style.setProperty("top", y + "px")
     body.style.setProperty("left", x + "px")
     document.getElementById("map").appendChild(body);
-    console.log("addBody: ", snakeList);
+    console.log("addBody: ", snakeList.join());
 }
 
 function resetGame() {
@@ -113,6 +113,10 @@ function autoAction() {
         return;
     }
     moveAll();
+    // 如果不行的话，考虑把reset函数延时超过500ms, 使它排在下一个autoAction之后
+    if (!isRun) {
+        return;
+    }
     setTimeout(() => {
         autoAction();
     }, 500)
