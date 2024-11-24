@@ -114,6 +114,7 @@ function autoAction() {
         return;
     }
     moveAll();
+    // 如果不行的话，考虑把reset函数延时超过500ms, 使它排在下一个autoAction之后
     if (!isRun) {
         return;
     }
