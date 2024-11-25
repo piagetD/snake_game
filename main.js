@@ -1,5 +1,5 @@
 const width = 20;
-const mapCount = 30; // 地图格子的个数
+const mapCount = 15; // 地图格子的个数
 const direction = ["up", "down", "left", "right"]
 const BORDER = width * mapCount;
 let snakeList = [];
@@ -62,7 +62,7 @@ function checkHit(foodPosition, containHead = true) {
 }
 
 function checkIsEnd() {
-    if (snakeList[0][0] <= 0 || snakeList[0][0] >= (BORDER - width) || snakeList[0][1] <= 0 || snakeList[0][1] >= (BORDER - width)) {
+    if (snakeList[0][0] < 0 || snakeList[0][0] > (BORDER - width) || snakeList[0][1] < 0 || snakeList[0][1] > (BORDER - width)) {
         isRun = false;
         if (window.confirm("hit the wall! keep playing?")) {
             resetGame();
@@ -92,20 +92,21 @@ function addBody(x, y) {
 }
 
 function resetGame() {
-    // const element = document.getElementById("map");
-    // while (element.firstChild) {
-    //     console.log("while: ", element.firstChild);
-    //     element.removeChild(element.firstChild);
-    // }
-    // console.log("resetGame: ", element);
-    // snakeList = [];
-    // L = 0;
-    // setFood();
-    // addBody(INITIAL_X, INITIAL_Y)
-    // addBody(INITIAL_X - width, INITIAL_Y); // 第一个子body
-
-    // isRun = true;
-    // autoAction();
+    setTimeout(() => {
+        const element = document.getElementById("map");
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+        console.log("resetGame: ", element);
+        snakeList = [];
+        L = 0;
+        setFood();
+        addBody(INITIAL_X, INITIAL_Y)
+        addBody(INITIAL_X - width, INITIAL_Y); // 第一个子body
+    
+        isRun = true;
+        autoAction();
+    }, 600)
 }
 // 应该是无限循环的函数，除非游戏中止
 function autoAction() {
@@ -119,7 +120,7 @@ function autoAction() {
     }
     setTimeout(() => {
         autoAction();
-    }, 500)
+    }, 300)
 }
 
 // 根据方向前进，遍历整个body数组，依次更新

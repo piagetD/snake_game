@@ -8,16 +8,21 @@
   </head>
   <body>
     <div id="map" class="map"></div>
-    <div onclick="moveAll()">BUTTON</div>
-    <div onclick="setFood()">fdd</div>
+    <!-- <div onclick="moveAll()">BUTTON</div>
+    <div onclick="setFood()">fdd</div> -->
   </body>
 
   <style>
+    body {
+      background-color: white;
+    }
     .map {
       width: 400px;
       height: 400px;
+      margin: auto;
       background-color: aliceblue;
       border: 1px solid;
+      overflow: hidden;
       position: relative;
     }
     .block {
